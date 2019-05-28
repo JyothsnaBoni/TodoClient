@@ -54,8 +54,14 @@
                   <td>    
                     <a (click)="edit(todo)">
                       <span *ngIf="todo!==editTodo">{{todo.status}}</span>
-                      <input *ngIf="todo===editTodo" [(ngModel)]="todo.status"
-                        (blur)="updateTodo()" (keyup.enter)="updateTodo()">
+                   <!--  <input *ngIf="todo===editTodo" [(ngModel)]="todo.status"
+                        (blur)="updateTodo()" (keyup.enter)="updateTodo()"> --> 
+                      
+                        <select [(ngModel)]="todo.status" *ngIf="todo===editTodo" (blur)="updateTodo()" (keyup.enter)="updateTodo()" >
+                          <option *ngFor="let myOption of myOptions" [value]="myOption.id"> 
+                              {{ myOption.name }}
+                          </option>
+                      </select>
                     </a>
                   </td>
 

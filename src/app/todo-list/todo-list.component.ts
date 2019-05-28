@@ -16,6 +16,11 @@ export class TodoListComponent implements OnInit {
   todo: Todo; todos : Todo[]; editTodo: Todo;
    newTodo: Todo; oldTodo : Todo; updateTodos : Todo[];
 
+     myOptions = [
+    {id: "done", name: "done"},
+    {id: "open", name: "open"},
+    
+  ];
 
   constructor(private todoService : TodoService,
     private http: HttpClient,
